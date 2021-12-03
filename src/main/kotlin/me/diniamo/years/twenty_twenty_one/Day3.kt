@@ -4,27 +4,23 @@ import me.diniamo.Day
 
 class Day3(year: Int) : Day<List<String>>(3, year) {
     override fun partOne(input: List<String>): Any {
-        // Calculate gamma rate
-        val gammaRate = StringBuilder().also { builder ->
-            input.forEach {
-                val zeroCount = it.count { c -> c == '0' }
-                val oneCount = it.count { c -> c == '1' }
+        val gammaBuilder = StringBuilder()
+        val epsilonBuilder = StringBuilder()
 
-                builder.append(if(oneCount > zeroCount) '1' else '0')
+        input.forEach {
+            val zeroCount = it.count { c -> c == '0' }
+            val oneCount = it.count { c -> c == '1' }
+
+            if(oneCount > zeroCount) {
+                gammaBuilder.append('1')
+                epsilonBuilder.append('0')
+            } else {
+                gammaBuilder.append('0')
+                epsilonBuilder.append('1')
             }
-        }.toString().toInt(2)
+        }
 
-        // Calculate epsilonRate
-        val epsilonRate = StringBuilder().also { builder ->
-            input.forEach {
-                val zeroCount = it.count { c -> c == '0' }
-                val oneCount = it.count { c -> c == '1' }
-
-                builder.append(if(oneCount < zeroCount) '1' else '0')
-            }
-        }.toString().toInt(2)
-
-        return gammaRate * epsilonRate
+        return gammaBuilder.toString().toInt(2) * epsilonBuilder.toString().toInt(2)
     }
 
     override fun partTwo(input: List<String>): Any {
