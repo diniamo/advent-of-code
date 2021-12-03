@@ -22,7 +22,6 @@ fun main() {
         //Aoc2020(),
         Aoc2021()
     ).forEach {
-        print("Working dir: ${System.getProperty("user.dir")}")
         it.evaluate(sessionId)
     }
 }

@@ -7,6 +7,7 @@ class Aoc2021 : Year(2021) {
     override val days: Collection<Day<out Any>>
         get() = listOf(
             //Day1(year),
-            Day2(year)
+            //Day2(year),
+            Day3(year)
         )
 }
