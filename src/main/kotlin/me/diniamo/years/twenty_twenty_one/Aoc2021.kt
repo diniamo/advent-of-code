@@ -8,6 +8,7 @@ class Aoc2021 : Year(2021) {
         get() = listOf(
             //Day1(year),
             //Day2(year),
-            Day3(year)
+            //Day3(year),
+            Day4(year)
         )
 }
