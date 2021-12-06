@@ -10,6 +10,7 @@ class Aoc2021 : Year(2021) {
             //Day2(year),
             //Day3(year),
             //Day4(year),
-            Day5(year)
+            //Day5(year),
+            Day6(year)
         )
 }
