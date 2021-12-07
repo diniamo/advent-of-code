@@ -13,3 +13,6 @@ const val ANSI_WHITE = "\u001B[37m"
 fun printColored(color: String, text: String) {
     println(color + text + ANSI_RESET)
 }
+
+
+infix fun Int.rangeOrDownTo(other: Int): IntRange = if(other >= this) this..other else other..this

@@ -1,6 +1,7 @@
 package me.diniamo.years.twenty_twenty_one
 
 import me.diniamo.Day
+import me.diniamo.rangeOrDownTo
 import java.lang.Integer.max
 
 private enum class DiagDir(val x: Int, val y: Int) {
@@ -74,5 +75,4 @@ class Day5(year: Int) : Day<List<Pair<Pair<Int, Int>, Pair<Int, Int>>>>(5, year)
     }
 
     private fun String.splitToPairInt(delimiter: String, ignoreCase: Boolean = false):Pair<Int, Int> = this.split(delimiter, ignoreCase = ignoreCase).let { Pair(it[0].toInt(), it[1].toInt()) }
-    private infix fun Int.rangeOrDownTo(other: Int): IntRange = if(other >= this) this..other else other..this
 }
